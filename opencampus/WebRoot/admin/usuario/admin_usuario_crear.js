@@ -52,33 +52,40 @@ function myCustomValidation (evt) {
 	
 	if (wf.formValidation(evt) && form.id == 'form_usuario_crear'){
 		
-		var isValidate = true;
+		try{		
 		
-		if(!validarAdjunto($('foto').value)){
-			showErrorForm('bloque_foto',"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Se permiten únicamente archivos JPG.");
-			isValidate = false;
-		}else{
-			hideErrorForm('bloque_foto');
-		}
-		
-		if($('user_ok')){
-		
-			if($F('user_ok') != '1'){
-				showErrorForm('username','Nombre de usuario no válido.');
+			var isValidate = true;
+			
+			if(!validarAdjunto($('foto').value)){
+				showErrorForm('bloque_foto',"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Se permiten únicamente archivos JPG.");
 				isValidate = false;
 			}else{
-				hideErrorForm('username');
+				hideErrorForm('bloque_foto');
 			}
 			
+			if($('user_ok')){
+			
+				if($F('user_ok') != '1'){
+					showErrorForm('username','Nombre de usuario no válido.');
+					isValidate = false;
+				}else{
+					hideErrorForm('username');
+				}
+				
+			}
+			
+			selectAll($('rols'));
+			selectAll($('permisos'));
+			$('btn_usuario_crear').disable();
+			//loading();
+			
+			if(!isValidate)
+				return wf.utilities.XBrowserPreventEventDefault(evt);
+		
+		}catch(e){
+			alert((e.description)?e.description:e);
 		}
 		
-		if(!isValidate)
-			return wf.utilities.XBrowserPreventEventDefault(evt);
-		
-		selectAll($('rols'));
-		selectAll($('permisos'));
-		$('btn_usuario_crear').disable();
-		//loading();
 		//return wf.utilities.XBrowserPreventEventDefault(evt);
 	}
 }

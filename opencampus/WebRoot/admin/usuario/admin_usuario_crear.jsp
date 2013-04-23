@@ -167,7 +167,7 @@
 	          <td class="label"><strong>Tel&eacute;fono M&oacute;vil</strong></td>
 	          <td><input type="text" name="movil" maxlength="40" class="validate-integer " size="32" value="<c:out value="${usuario.persona.telcelular}"/>"/></td>
 	          <td class="label"><strong>Foto <i>(Solo JPG)</i></strong></td>
-	          <td><div id="bloque_foto"><div id="photo" class="file" style="float: left;"><input type="file" name="foto" onchange="setPhoto(this)"/></div>
+	          <td><div id="bloque_foto"><div id="photo" class="file" style="float: left;"><input type="file" id="foto" name="foto" onchange="setPhoto(this)"/></div>
 	          	<div id="plabel" style="float: left;">&nbsp;</div>
 	          	<div id="ptrash" style="float: rigth;"><img src="<%=request.getContextPath()%>/img/icon_trash.gif" border="0" 
 	          	width="13" height="15" style="cursor: pointer;" onclick="delPhoto()"/></div></div>
@@ -198,7 +198,7 @@
 		        </tr>
 		        <tr>
 		          <td>
-					<select name="rols" style="width:274px; height: 62px;" multiple="multiple" ondblclick="quitarRegla('rols')">
+					<select id="rols" name="rols" style="width:274px; height: 62px;" multiple="multiple" ondblclick="quitarRegla('rols')">
 						<c:forEach items="${usuario.roles}" var="rol">
 			          		<option value="<c:out value="${rol.idrol}"/>"><c:out value="${rol.nombre}"/></option>
 			          	</c:forEach>
@@ -228,7 +228,7 @@
 	        </tr>
 	        <tr>
 	          <td>
-				<select name="permisos" style="width:274px; height: 62px;" multiple="multiple" ondblclick="quitarRegla('permisos')">
+				<select id="permisos" name="permisos" style="width:274px; height: 62px;" multiple="multiple" ondblclick="quitarRegla('permisos')">
 					<c:forEach items="${usuario.permisos}" var="permiso">
 		          		<option value="<c:out value="${permiso.idJerarquia}"/>"><c:out value="${permiso.rutaCompleta}"/></option>
 		          	</c:forEach>
