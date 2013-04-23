@@ -3,10 +3,12 @@
 <%@  page import="edu.opencampus.lms.modelo.Usuario"%>
 <%@  page import="edu.opencampus.lms.util.Constante"%>
 <%Usuario usuario = (Usuario)session.getAttribute(Constante.USUARIO_ACTUAL); %>
+<%if(false){ %>
 <div id="avisoback" class="avisoback_red" style="display: none;">
 	<marquee behavior="scroll" scrolldelay="10" scrollamount="2"><span id="aviso">Aviso de prueba</span></marquee>
 </div>
 <script>initAviso();</script>
+<%} %>
 <div id="menu_principal_alumno" style="padding-left: 5px;">
 <table width="99%" border="0" cellpadding="0" cellspacing="0" class="tabla_sin_layout">
 					<tr   height="20" >
