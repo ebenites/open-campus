@@ -202,9 +202,17 @@ public class AulaVirtualAction extends BaseAction {
 						break;
 					case 3: //Repaso
 						origen = unidadesPath + Constante.PATH_REPASO + Constante.REPASO + Constante.FILETYPE_SWF;
-						Archivo.downloadImage(Constante.REPASO+Constante.FILETYPE_SWF, origen, getResponse());	
+						if(new java.io.File(origen).exists())
+							Archivo.downloadImage(Constante.REPASO+Constante.FILETYPE_SWF, origen, getResponse());
+						else{
+							origen = unidadesPath + Constante.PATH_REPASO + Constante.REPASO + Constante.FILETYPE_PDF;//Constante.FILETYPE_SWF;
+							Archivo.downloadImage(Constante.REPASO+Constante.FILETYPE_PDF/*Constante.FILETYPE_SWF*/, origen, getResponse());
+						}
 						break;
-		
+					case 4: //Descarga
+						origen = unidadesPath + Constante.PATH_REPASO + Constante.REPASO + Constante.FILETYPE_ZIP;
+						Archivo.downloadFile(Constante.REPASO + Constante.FILETYPE_ZIP, origen, getResponse());	
+						break;
 					default:
 						break;
 				}
