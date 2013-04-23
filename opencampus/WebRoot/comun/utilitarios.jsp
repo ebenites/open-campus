@@ -82,7 +82,7 @@
 									target="_blank"><img src="<%=request.getContextPath()%>/img/website_icon.gif" alt="Web" border="0"></a>
 							</td>
 							<td align="center">
-								<a href="<%=Constante.RUTA_WEB_SOFTWARE%>install_flash_player.exe"><img
+								<a href="http://www.tecsup.edu.pe/webcampus/soft/install_flash_player.exe"><img
 										src="<%=request.getContextPath()%>/img/icon_download.gif" alt="Descargar"  border="0" /> </a>
 							</td>
 						</tr>
@@ -110,7 +110,7 @@
 							<a href="http://www.mozilla-europe.org/es/products/firefox/" target="_blank"><img src="<%=request.getContextPath()%>/img/website_icon.gif" alt="Web" border="0"></a>
 							</td>
 							<td align="center">
-								<a href="<%=Constante.RUTA_WEB_SOFTWARE%>Firefox Setup 3.0.6.exe"><img
+								<a href="http://www.tecsup.edu.pe/webcampus/soft/Firefox Setup 3.0.6.exe"><img
 										src="<%=request.getContextPath()%>/img/icon_download.gif" alt="Descargar" border="0" /> </a>
 							</td>
 						</tr>
@@ -138,11 +138,11 @@
 							<a href="http://www.adobe.com/es/products/acrobat/" target="_blank"><img src="<%=request.getContextPath()%>/img/website_icon.gif" alt="Web" border="0"></a>
 							</td>
 							<td align="center">
-								<a href="<%=Constante.RUTA_WEB_SOFTWARE%>AdbeRdr90_es_ES.exe"><img
+								<a href="http://www.tecsup.edu.pe/webcampus/soft/AdbeRdr90_es_ES.exe"><img
 										src="<%=request.getContextPath()%>/img/icon_download.gif" alt="Descargar" border="0" /> </a>
 							</td>
 						</tr>	
-						<tr>
+						<tr class="fon_color01">
 							<td class="bor_der_unid">
 								4
 							</td>
@@ -165,7 +165,7 @@
 							<a href="http://www.adobe.com/es/products/acrobat/" target="_blank"><img src="<%=request.getContextPath()%>/img/website_icon.gif" alt="Web" border="0"></a>
 							</td>
 							<td align="center">
-								<a href="<%=Constante.RUTA_WEB_SOFTWARE%>install_flash_player.exe"><img
+								<a href="http://www.tecsup.edu.pe/webcampus/soft/install_flash_player.exe"><img
 										src="<%=request.getContextPath()%>/img/icon_download.gif" alt="Descargar" border="0" /> </a>
 							</td>
 						</tr>							
