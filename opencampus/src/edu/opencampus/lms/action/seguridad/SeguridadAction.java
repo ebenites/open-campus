@@ -84,9 +84,12 @@ public class SeguridadAction extends BaseAction {
 
 	public String salida() throws Exception{
 		log.info("salida()");
+		try{
 		if (null != getUsuarioSession()) {
 			getSession().remove(Constante.USUARIO_ACTUAL);
 			getSession().invalidate();
+		}}catch (Exception e) {
+			log.error(e);
 		}
 		return SUCCESS;
 	}
