@@ -291,9 +291,9 @@ public final class Archivo {
 			stream.close();
 
 		} catch (FileNotFoundException e){
-			log.error("Archivo No Existe");
+			log.error("Archivo No Existe: "+ e.toString());
 		} catch (Exception e) {
-			log.info("Descarga Cancelada");
+			log.info("Descarga Cancelada: "+ e.toString());
 		} finally {
 			response.setHeader("Content-Disposition", null);
 			//
@@ -318,8 +318,8 @@ public final class Archivo {
 		try {
 			response.setHeader("Content-Disposition", "inline; filename=\"" + virtualFilename + "\"");
 			
-			//log.info("source :" + source + " - " + width + "px x " + height + "px");
-
+			log.info("source :" + source + " - " + width + "px x " + height + "px");
+			
 			// Carga la imagen desde el fichero
 			Image imagen = new ImageIcon(source).getImage();
 			
@@ -353,9 +353,9 @@ public final class Archivo {
 			stream.close();
 
 		} catch (FileNotFoundException e){
-			log.error("Archivo No Existe");
+			log.error("Archivo No Existe: "+ e.toString());
 		} catch (Exception e) {
-			log.info("Descarga Cancelada");
+			log.info("Descarga Cancelada: "+ e.toString());
 		} finally {
 			response.setHeader("Content-Disposition", null);
 			//
