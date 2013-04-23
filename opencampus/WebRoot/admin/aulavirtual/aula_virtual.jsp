@@ -112,14 +112,14 @@
 										</td>
 										<td align="left">
 											<span style="cursor: pointer; text-decoration: underline; white-space: nowrap;" 
-												onclick="abrirRepaso('<%=request.getContextPath()%>/admin/unidad/VerRecurso.action?ruta=3&id=<c:out value="${unidad.idUnidad}"/>');">
+												onclick="abrirTexto('<%=request.getContextPath()%>/admin/unidad/VerRecurso.action?ruta=3&id=<c:out value="${unidad.idUnidad}"/>');">
 												<c:out value="${unidad.nombreCompleto}"/>
 											</span>
 										</td>
 										
 										<td align="center" class="texto1" width="25">
 											<img src="<%=request.getContextPath()%>/img/icon_download.gif" style="cursor: pointer;" alt="Descargar Repaso"
-												onclick="alert('descargar repaso!')"/>
+												onclick="abrirTexto('<%=request.getContextPath()%>/admin/unidad/VerRecurso.action?ruta=4&id=<c:out value="${unidad.idUnidad}"/>')"/>
 										</td>
 										
 										<!-- ********** Laboratorio ********** -->
@@ -206,7 +206,7 @@
 							</table>
 						
 						</c:if>
-						
+						<!--
 						<json:object name="aula" escapeXml="true">
 						  <json:property name="itemCount" value="${aula.idFicha}"/>
 						  <json:property name="subtotal" value="${aula.curso.nombre}"/>
@@ -217,6 +217,7 @@
 						    </json:object>
 						  </json:array>
 						</json:object>
+						-->
 							<!-- if(usuario.esAdmin())mostrar boton de regresar a fichas -->
 							<!-- http://json-taglib.sourceforge.net/tutorial.html -->
 							<!-- http://www.roseindia.net/jstl/jstlxmltags.shtml -->
