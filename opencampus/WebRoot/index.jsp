@@ -41,7 +41,7 @@
 											<td align="right" width="60"><strong>Usuario :</strong></td>
 											<td>
 												<input id="idusuario" name="idUsuario" type="text" autocomplete="off" maxlength="32" size="16" class="required"
-													value="<c:out value="${idUsuario}" default="ebenites"/>" />
+													value="<c:out value="${idUsuario}" default=""/>" />
 											</td>
 										</tr>
 										<tr>
@@ -49,7 +49,7 @@
 												<strong>Clave :</strong>
 											</td>
 											<td>
-												<input name="clave" type="password" maxlength="32" size="16" class="required" value="tecsup" />
+												<input name="clave" type="password" maxlength="32" size="16" class="required" value="" />
 											</td>
 										</tr>
 										<c:if test="${message != null}">
@@ -118,12 +118,14 @@
 																		<tbody>
 																			<tr>
 																				<td>
+																					<c:if test="${n.imagen != null}">
 																					<a href="javascript:void(0);"
 																						onclick="abrirImagenDeNoticia('<%=request.getContextPath()%>/VerImagen.action?filename=<c:out value="${n.imagen}"/>');"><img
 																							width="180" vspace="4" hspace="4" border="0"
 																							align="left" alt=""
 																							src="<%=request.getContextPath()%>/VerImagenPrevia.action?filename=<c:out value="${n.imagen}" />" />
 																					</a>
+																					</c:if>
 																				</td>
 																				<td valign="top">
 																					<p class="textonormal" align="justify">
