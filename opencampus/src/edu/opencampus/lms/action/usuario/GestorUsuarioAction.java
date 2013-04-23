@@ -620,7 +620,7 @@ public class GestorUsuarioAction extends BaseAction {
 				
 				usuario.setPersona(persona);
 				
-				log.info("Set Roles");
+				log.info("Set Roles " + rols);
 				List<Rol> roles = new ArrayList<Rol>();
 				if(rols != null && rols.length != 0){
 					for (int i = 0; i < rols.length; i++) {
@@ -631,7 +631,7 @@ public class GestorUsuarioAction extends BaseAction {
 				}
 				usuario.setRoles(roles);
 				
-				log.info("Set Permisos");
+				log.info("Set Permisos " + permisos);
 				Collection<Jerarquia> jerarquias = new ArrayList<Jerarquia>();
 				if(permisos != null){
 					for (int i = 0; i < permisos.length; i++) {
