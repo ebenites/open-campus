@@ -42,14 +42,14 @@
 														
 														<td width="220px" align="center" class="ficha_tabla" valign="top">
 															<div style="border: 2px black;">
-																<table width="200" cellpadding="3" cellspacing="0" class="open_table nogrid">
+																<table width="314" cellpadding="3" cellspacing="0" class="open_table nogrid">
 																	<caption><a
 																				href="<%=request.getContextPath()%>/aulavirtual/AulaVirtual.action?id=<c:out value="${ficha.idFicha}"/>"
 																				class="tit_cab"> <c:out value="${ficha.curso.nombre}"/> </a></caption>
 																	
 																	<tr>
 																		<td colspan="2">
-																			<table width="200" border="0" align="center" cellpadding="0" cellspacing="0" 
+																			<table border="0" align="center" cellpadding="0" cellspacing="0" 
 																				style="padding-left: 3px;padding-right: 3px; ">
 																				<tbody>
 																				<tr>
@@ -58,7 +58,31 @@
 																					</td>
 																					<td width="115" align="left" style="border-right: none !important; text-align: left !important; ">
 																						<p style="text-align: left !important;">
-																							<c:out value="${ficha.docentePrincipal.usuario.persona.nombreCompleto}"/>
+																							<b><c:out value="${ficha.docentePrincipal.usuario.persona.nombreCompleto}"/></b>
+																						</p>
+																						<p style="text-align: left !important;">
+																							<table border="0">
+																							<c:if test="${ficha.matriculaActual.rol.idRol == 2 || ficha.matriculaActual.rol.idRol == 3}">
+																								<tr>
+																									<td style="border-right: none !important; text-align: left !important; "><s:text name="portal.cursos.fechaacceso"/>:</td>
+																									<td style="border-right: none !important; text-align: left !important; "><c:out value="${ficha.periodo.fechaEdicionToString}"></c:out></td>
+																								</tr>
+																							</c:if>
+																							<tr>
+																								<td style="border-right: none !important; text-align: left !important; "><b><s:text name="portal.cursos.fechainicio"/>:</b></td>
+																								<td style="border-right: none !important; text-align: left !important; "><b><c:out value="${ficha.periodo.fechaInicioToString}"></c:out></b></td>
+																							</tr>
+																							<tr>
+																								<td style="border-right: none !important; text-align: left !important; "><b><s:text name="portal.cursos.fechafin"/>:</b></td>
+																								<td style="border-right: none !important; text-align: left !important; "><b><c:out value="${ficha.periodo.fechaFinToString}"></c:out></b></td>
+																							</tr>
+																							<c:if test="${ficha.matriculaActual.rol.idRol == 2 || ficha.matriculaActual.rol.idRol == 3}">
+																								<tr>
+																									<td style="border-right: none !important; text-align: left !important; "><s:text name="portal.cursos.fechacierre"/>:</td>
+																									<td style="border-right: none !important; text-align: left !important; "><c:out value="${ficha.periodo.fechaRevisionToString}"></c:out></td>
+																								</tr>
+																							</c:if>
+																							</table>
 																						</p>
 																					</td>
 																				</tr>
@@ -67,7 +91,7 @@
 																						<hr width="90%" />
 																					</td>
 																				</tr>
-																				
+																				<%if(false){ %>
 																				<c:if test="${ficha.matriculaActual.rol.idRol == 2 || ficha.matriculaActual.rol.idRol == 3}">
 																						
 																				<tr>
@@ -116,7 +140,7 @@
 																				</tr>
 																				
 																				</c:if>
-																				
+																				<%} %>
 																				
 																				
 																				<tr>
@@ -211,6 +235,10 @@
 															</div>
 														</td>
 														
+														
+														<c:if test="${fila.count%3==0}">
+															</tr><tr>
+														</c:if>
 														
 														</c:forEach>
 														
