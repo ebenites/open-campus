@@ -5,18 +5,18 @@ public class Constante {
 	/**
 	 * Redireccion de correo
 	 */
-	public static final String DIRECCION_CORREO_SALIENTE = "informes@utec.edu.pe";
+	public static final String DIRECCION_CORREO_SALIENTE = "informes@tecsup.edu.pe";
 	
 	/**
 	 * CONSTANTES PARA EL REPOSITORIO
 	 */
 
 	public static final String PROYECTO = "OpenCampus";
-	public static final String SLASH = "\\";
+	public static final String SLASH = "/";
 	private static final String RUTA_PROYECTO = "opencampus";
 //	private static final String RUTA_REPOSITORIO = "/home/";
 //	private static final String RUTA_REPOSITORIO = "/home/webcampus/";
-	private static final String RUTA_REPOSITORIO = "M:\\";
+	private static final String RUTA_REPOSITORIO = "/var/data/";
 	
 	public static final String REPOSITORIO = RUTA_REPOSITORIO + RUTA_PROYECTO + SLASH;
 	
