@@ -49,7 +49,7 @@
 										onclick="javascript:abrirReporte('<%=request.getContextPath()%>/aulavirtual/Reporte.action','Reporte','640','350');">
 										<s:text name="aula.alumno.menu.reporte"/> </span>
 								</td>
-								<td width="10" class="menu_prin01" align="center">
+								<td width="10" class="menu_prin01" align="center" style="display: none">
 									|
 								</td>
 								<td width="87" align="center" style="display: none">
@@ -57,7 +57,7 @@
 										onclick="javascript:abrirReporte('<%=request.getContextPath()%>/aulavirtual/ReporteNotas.action','Reporte de Notas','640','350');">
 										<s:text name="aula.alumno.menu.reporte_notas"/> </span>
 								</td>
-								<td width="10" class="menu_prin01" align="center">
+								<td width="10" class="menu_prin01" align="center" style="display: none">
 									|
 								</td>
 								<td width="52" align="center">
@@ -104,6 +104,11 @@
 
 							<table width="100%" cellpadding="3" cellspacing="0" border="0" class="open_table nogrid">
 								<caption><s:text name="aula.alumno.unidades"/></caption>
+								<thead>
+									<tr>
+										<th width="16">&nbsp;</th><th width="48">Textos</th><th>Repasos</th><th width="24">&nbsp;</th><th width="10">&nbsp;</th><th width="60">Di&aacute;logos</th><th width="10">&nbsp;</th>
+									</tr>
+								</thead>
 								<tbody>
 								<c:forEach items="${aula.silabo.unidades}" var="unidad" varStatus="fila">
 									<tr <c:if test="${fila.count%2==0}">class="line"</c:if>>
@@ -122,20 +127,26 @@
 										<!-- ********** Repaso ********** -->
 										<c:set var="repaso" value="${unidad.recursos[1]}" />
 										
-										<c:if test="${aula.cantidadRepasos > 0}">
-											<td align="left">
-												<span style="cursor: pointer; text-decoration: underline; white-space: nowrap;" class="anatips" title="Ver Repaso"
-													onclick="abrirRepaso('<%=request.getContextPath()%>/aulavirtual/VerRecurso.action?ruta=3&id=<c:out value="${unidad.idUnidad}"/>');">
+										<c:choose>
+											<c:when test="${aula.cantidadRepasos > 0}">
+												<td align="left">
+													<span style="cursor: pointer; text-decoration: underline; white-space: nowrap;" class="anatips" title="Ver Repaso"
+														onclick="abrirTexto('<%=request.getContextPath()%>/aulavirtual/VerRecurso.action?ruta=3&id=<c:out value="${unidad.idUnidad}"/>');">
+														<c:out value="${unidad.nombreCompleto}"/>
+													</span>
+												</td>
+												
+												<td align="center"  width="24" class="border-right">
+													<img src="<%=request.getContextPath()%>/img/icon_download.gif" style="cursor: pointer;" class="anatips" title="Descargar Repaso"
+														onclick="abrirTexto('<%=request.getContextPath()%>/aulavirtual/VerRecurso.action?ruta=4&id=<c:out value="${unidad.idUnidad}"/>')"/>
+												</td>
+											</c:when>
+											<c:otherwise>
+												<td align="left" colspan="2" class="border-right">
 													<c:out value="${unidad.nombreCompleto}"/>
-												</span>
-											</td>
-											
-											<td align="center"  width="24" class="border-right">
-												<img src="<%=request.getContextPath()%>/img/icon_download.gif" style="cursor: pointer;" class="anatips" title="Descargar Repaso"
-													onclick=""/>
-											</td>
-										</c:if>
-										
+												</td>
+											</c:otherwise>
+										</c:choose>
 										<!-- ********** Laboratorio ********** -->
 										<c:set var="lab" value="${unidad.recursos[2]}" />
 										
