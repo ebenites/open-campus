@@ -1,6 +1,7 @@
 @CHARSET "ISO-8859-1";
 /*
  * colores: #CCCCCC(border), #333333(text), #E5FEC1(line), #7EBEBE(hover), #539A9E, #487F93(text_hover)
+ AZUL MATE: #E5FEC1
  * http://mx.answers.yahoo.com/question/index?qid=20090119160259AAiP7nG
  */
  
@@ -29,7 +30,7 @@ body {
 }
 /* Para filas intercaladas*/
 .open_table .line{
-	background-color: #E5FEC1 !important; 
+	background-color: #D6F2F9 !important; 
 }
 /* Para formularios*/
 .open_table td.label, .open_table th.label{ 
@@ -37,7 +38,7 @@ body {
 	padding-top: 5px;
 	font-weight: bold;
 	text-indent: 3px;
-	background-color: #E5FEC1 !important; 
+	background-color: #D6F2F9 !important; 
 }
 /* Partes del table*/
 .open_table caption {
@@ -226,7 +227,7 @@ tr.rowodd {
 	background-image: none !important;
 }
 tr.roweven {
-	background-color: #E5FEC1;
+	background-color: #D6F2F9;
 }
 
 /*
@@ -554,7 +555,7 @@ div#anatips_tip {
 #banner {
 	width: 100%;
 	border-bottom: 1px solid #B6B6B6;
-	background-image: url(../img/logoU.jpg);
+	background-image: url(../img/logoT.jpg);
 	height: 68px;
 	background-repeat: no-repeat;
 	padding: 0px;

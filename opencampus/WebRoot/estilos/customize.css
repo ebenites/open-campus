@@ -1,6 +1,10 @@
 /***********************************************/
-	/* Estilos Campus opencampus                       */
-	/***********************************************/
+/* 
+	Estilos Campus opencampus       
+	Verde limon: #E5FEC1
+	Azul Mate: #D6F2F9               
+*/
+/***********************************************/
 .tabla00 {
 	border-bottom-color: #0099FF;
 	border-left-color: #0099FF;
@@ -65,7 +69,7 @@
 .datos {
 	color: #4268C9;
 	font-weight: bold;
-	background-color: #E5FEC1;
+	background-color: #D6F2F9;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: #cccccc;
@@ -80,7 +84,7 @@
 }
 
 .derecha {
-	background-color: #E5FEC1;
+	background-color: #D6F2F9;
 }
 
 .datosIz {
@@ -457,11 +461,11 @@
 }
 
 .fon_color01 {
-	background-color: #E5FEC1;
+	background-color: #D6F2F9;
 }
 
 .fon_color02 {
-	background-color: #E5FEC1;
+	background-color: #D6F2F9;
 }
 
 .fon_color03 {
