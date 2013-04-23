@@ -547,8 +547,8 @@ public class Usuario extends BaseModelo implements Comparable<Usuario>, HttpSess
 		}
 		
         //Eliminar archivos temporales **********
-        String ruta = Constante.REPOSITORIO_TEMPORAL + Constante.SLASH + this.idSession;
-		Archivo.eliminarDirectorio(ruta);
+//      String ruta = Constante.REPOSITORIO_TEMPORAL + Constante.SLASH + this.idSession;
+//		Archivo.eliminarDirectorio(ruta);
         
 	}
 	
