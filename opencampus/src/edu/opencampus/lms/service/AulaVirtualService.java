@@ -122,16 +122,18 @@ public class AulaVirtualService {
 						Unidad unidad = itUnidad.next();
 						if(unidad.getEstado() == Constante.ESTADO_INACTIVO){
 							log.info("Eliminando unidad por inactivo: "+unidad.getIdUnidad()+"-"+unidad.getNombreCompleto());
-							itUnidad.remove();
+							itUnidad.remove(); //PMpendientePM Si aqui falla por  ConcurrentModificationException haz como la linea de abajo, el itUnidad.remove() que este afuera del foreach 
 						}else{
 							//Eliminado recursos de estado inactivo
+							Recurso recurso = null;
 							for (Iterator<Recurso> itRecurso=unidad.getRecursos().iterator();itRecurso.hasNext();) {
-								Recurso recurso = itRecurso.next();
+								recurso = itRecurso.next();
 								if(recurso.getEstado() == Constante.ESTADO_INACTIVO){
 									log.info("Eliminando recurso por inactivo: "+unidad.getIdUnidad()+"-"+recurso.getNombre());
-									unidad.getRecursos().remove(recurso);
+									break;
 								}
 							}
+							unidad.getRecursos().remove(recurso);
 						}
 					}	
 					
