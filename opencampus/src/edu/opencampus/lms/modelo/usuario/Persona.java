@@ -124,7 +124,7 @@ public class Persona extends BaseModelo implements Serializable {
 		this.ubigeo = ubigeo;
 	}
 	public String getNombreCompleto() {
-		setNombreCompleto(Formato.formatoTexto(this.apepaterno + "   " + this.apematerno + ", " + this.nomuno + " " + this.nomdos));
+		setNombreCompleto(/*Formato.formatoTexto*/(this.apepaterno + " " + this.apematerno + ", " + this.nomuno + " " + this.nomdos));
 		return nombreCompleto;
 	}
 	private void setNombreCompleto(String nombreCompleto) {
